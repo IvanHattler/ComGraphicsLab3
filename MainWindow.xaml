@@ -1,0 +1,35 @@
+﻿<Window x:Class="Lab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3" Style="{DynamicResource ResourceKey=grayWindowStyle}"
+        mc:Ignorable="d" Icon="Icon1.ico" WindowStartupLocation="CenterScreen"
+        Title="Графический редактор" Height="350" Width="545" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" BorderBrush="Black">
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Button Height="25" Width="auto" Content="Apply" Margin="3,3,0,3" Click="Button_Click"/>
+                <Label>Type:</Label>
+                <ComboBox x:Name="comboBox" Width="120" Margin="3,3,0,3">
+                    <ComboBoxItem>Pen</ComboBoxItem>
+                    <ComboBoxItem>Line</ComboBoxItem>
+                    <ComboBoxItem>Ellipse</ComboBoxItem>
+                    <ComboBoxItem>EllipseNative</ComboBoxItem>
+                    <ComboBoxItem>CircleNative</ComboBoxItem>
+                    <ComboBoxItem>Fill</ComboBoxItem>
+                    <ComboBoxItem>FillWithPattern</ComboBoxItem>
+                    <ComboBoxItem>null</ComboBoxItem>
+                </ComboBox>
+                <Button Height="25" Width="auto" Content="Clear" Margin="3,3,0,3" Click="Button_Click_1"/>
+                <Label Content="Радиус:"></Label>
+                <TextBox x:Name="tb1" Width="70" Text="40" Height="20" Margin="3,3,0,3"/>
+            </StackPanel>
+        </Border>
+        <Canvas x:Name="canv" Grid.Row="1" Background="White" SizeChanged="canv_SizeChanged"/>
+    </Grid>
+</Window>
